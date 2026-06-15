@@ -799,14 +799,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     function initSplineOptimization() {
         const isTouchDevice = ('ontouchstart' in window);
-        const cores = navigator.hardwareConcurrency || 4;
         const memory = navigator.deviceMemory || 0;
-        
-        const isHighEndMobile = isTouchDevice && memory >= 8;
-        const isBudgetMobile = isTouchDevice && memory < 8;
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+        const isHighEndMobile = isTouchDevice && (isIOS || memory >= 8);
+        const isBudgetMobile = isTouchDevice && !isIOS && memory < 8;
 
         const splineViewer = document.querySelector('spline-viewer');
         const fallback = document.getElementById('hero-fallback');
+
         if (splineViewer) {
             if (isHighEndMobile) {
                 splineViewer.style.display = 'block';
