@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Rohit | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" id="favicon" href="favicon-dark.svg" type="image/svg+xml">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Spline Viewer -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.97/build/spline-viewer.js"></script>
+</head>
+<body>
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <p class="loader-status" id="loader-status"></p>
+            <div class="loader-bar-track">
+                <div class="loader-bar-fill" id="loader-bar-fill"></div>
+            </div>
+            <p class="loader-welcome" id="loader-welcome"></p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div id="main-content">
+        
+        <!-- 2. NAVBAR -->
+        <nav id="glass-nav" class="glass-nav">
+            <!-- Desktop Navbar -->
+            <div class="glass-nav-inner" id="glass-nav-inner">
+                <!-- Sliding blob background -->
+                <div class="nav-blob" id="nav-blob"></div>
+
+                <a href="#hero" class="glass-btn glass-btn-name" data-nav="home">
+                    <span class="glass-btn-front">Siddharth</span>
+                    <span class="glass-btn-back">Siddharth</span>
+                </a>
+
+                <div class="nav-divider"></div>
+
+                <a href="#about" class="glass-btn" data-nav="0">
+                    <span class="glass-btn-front">About</span>
+                    <span class="glass-btn-back">About</span>
+                </a>
+                <a href="#expertise" class="glass-btn" data-nav="1">
+                    <span class="glass-btn-front">Expertise</span>
+                    <span class="glass-btn-back">Expertise</span>
+                </a>
+                <a href="#works" class="glass-btn" data-nav="2">
+                    <span class="glass-btn-front">My Works</span>
+                    <span class="glass-btn-back">My Works</span>
+                </a>
+                <a href="#contact" class="glass-btn" data-nav="3">
+                    <span class="glass-btn-front">Contact</span>
+                    <span class="glass-btn-back">Contact</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Header (Outside nav to stay fixed/visible) -->
+        <div class="mobile-header" id="mobile-header">
+            <div class="mobile-logo">SR<span class="logo-dot">.</span></div>
+            <button class="hamburger" id="hamburger-open" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="nav-overlay" id="nav-overlay">
+            <button class="nav-close" id="nav-close" aria-label="Close Menu">×</button>
+            <div class="nav-overlay-links">
+                <a href="#hero" class="mobile-link">Home</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#expertise" class="mobile-link">Expertise</a>
+                <a href="#works" class="mobile-link">My Works</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+            </div>
+        </div>
+
+        <!-- 3. HERO SECTION -->
+        <section id="hero" class="hero">
+            <!-- Spline Background -->
+            <div class="hero-spline">
+                <spline-viewer url="https://prod.spline.design/neeGTGHssiX66Gpe/scene.splinecode"></spline-viewer>
+            </div>
+
+            <!-- Dark Overlay for Readability -->
+            <div class="hero-overlay"></div>
+
+            <!-- Ambient Light Orbs -->
+            <div class="orb orb-violet"></div>
+            <div class="orb orb-lavender"></div>
+            <div class="orb orb-center"></div>
+
+            <!-- Hero Text Content -->
+            <div class="hero-content">
+                <div class="freelance-badge">
+                    <span class="badge-line"></span>
+                    <span class="badge-text">AVAILABLE FOR FREELANCE</span>
+                </div>
+
+                <p class="hero-greeting" id="hero-greeting">Hi, I'm</p>
+                
+                <h1 class="hero-name">
+                    <span class="name-line name-white" id="name-siddharth">SIDDHARTH</span>
+                    <span class="name-line name-gradient" id="name-rohit">ROHIT</span>
+                </h1>
+
+                <div class="hero-typing-container">
+                    <span id="typing-text"></span><span class="typing-cursor">|</span>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#works" class="cta-btn cta-purple" data-magnetic>
+                        <span class="cta-content">VIEW MY WORK</span>
+                        <div class="cta-hover-layer"></div>
+                    </a>
+                    <a href="#contact" class="cta-btn cta-glass" data-magnetic>
+                        <span class="cta-content">LET'S TALK</span>
+                        <div class="cta-liquid"></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-indicator" id="scroll-indicator">
+                <span class="scroll-label">Let's dive in</span>
+                <div class="arrows-container">
+                    <svg class="arrow arrow-1" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 4 12 11 20 4"/>
+                    </svg>
+                    <svg class="arrow arrow-2" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 4 12 11 20 4"/>
+                    </svg>
+                    <svg class="arrow arrow-3" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 4 12 11 20 4"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="section-header">
+                    <span class="section-badge">
+                        <span class="badge-line"></span>
+                        <span class="badge-text">ABOUT ME</span>
+                    </span>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Left Column: Photo -->
+                    <div class="about-left">
+                        <div class="about-photo-wrapper">
+                            <div class="about-photo-orb"></div>
+                            <div class="about-photo-container">
+                                <img src="assets/images/my-photo/image.png" alt="Siddharth Rohit" class="about-img" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Content -->
+                    <div class="about-right">
+                        <p class="about-greeting">Hello, I'm</p>
+                        <h2 class="about-name">SIDDHARTH <span class="name-gradient">ROHIT</span></h2>
+                        
+                        <div class="about-role-tag">
+                            CSE Student & Frontend Developer
+                        </div>
+
+                        <div class="about-text">
+                            <p class="about-para">I'm a third-year Computer Science student from India with a deep passion for building premium web experiences. For several years I've been exploring software development — driven by curiosity, creativity, and a desire to turn ideas into meaningful digital products.</p>
+                            <p class="about-para">I specialize in modern web development — creating visually stunning, responsive, and performant websites for businesses, startups, and creators. My stack includes HTML, CSS, JavaScript, GSAP animations, and Spline 3D, combined with a strong eye for design and user experience.</p>
+                            <p class="about-para">By blending hand-coded development with AI-assisted workflows, I deliver high-quality solutions efficiently — without sacrificing flexibility, customization, or attention to detail. My goal: help clients establish a premium online presence that reflects their brand and drives results.</p>
+                        </div>
+
+                        <div class="about-stats">
+                            <div class="stat-pill">Available Worldwide</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. EXPERTISE SECTION -->
+        <section id="expertise" class="expertise-section">
+            <div class="expertise-container">
+                <div class="expertise-header-block">
+                    <div class="expertise-label-wrapper">
+                        <span class="expertise-label-text">EXPERTISE</span>
+                        <span class="expertise-label-line"></span>
+                    </div>
+                    <h2 class="expertise-title">
+                        <span class="title-word">Technical</span>
+                        <span class="title-word">Arsenal</span>
+                    </h2>
+                    <p class="expertise-subtext">Three focused disciplines. One goal — premium digital experiences.</p>
+                </div>
+
+                <div class="expertise-cards">
+                    <!-- Card 1 -->
+                    <div class="expertise-card" data-index="1">
+                        <div class="card-top">
+                            <div class="icon-tile">🎨</div>
+                            <h3 class="card-category">Frontend Development</h3>
+                            <p class="card-description">Crafting immersive, pixel-perfect interfaces with smooth animations and cinematic detail.</p>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">GSAP Animations</span>
+                            <span class="skill-tag">Spline 3D</span>
+                            <span class="skill-tag">Responsive Design</span>
+                        </div>
+                        <div class="card-accent-line"></div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="expertise-card" data-index="2">
+                        <div class="card-top">
+                            <div class="icon-tile">⚙️</div>
+                            <h3 class="card-category">Backend & Database</h3>
+                            <p class="card-description">Building reliable server-side logic and clean data architecture that powers great products.</p>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                        <div class="card-accent-line"></div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="expertise-card" data-index="3">
+                        <div class="card-top">
+                            <div class="icon-tile">🛠️</div>
+                            <h3 class="card-category">Design & Tools</h3>
+                            <p class="card-description">From wireframe to final pixel — using industry-standard tools to plan, design, and ship.</p>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                        <div class="card-accent-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. MY WORKS SECTION -->
+        <section id="works" class="works-section">
+            <div class="works-container">
+                <div class="works-header-block">
+                    <div class="works-label-wrapper">
+                        <span class="works-label-text">SELECTED WORKS</span>
+                        <span class="works-label-line"></span>
+                    </div>
+                    <h2 class="works-title">
+                        <span class="works-title-word">Things</span>
+                        <span class="works-title-word">I've</span>
+                        <span class="works-title-word">Built</span>
+                    </h2>
+                    <p class="works-subtext">Six projects. Six stories. Each one built with obsession.</p>
+                </div>
+
+                <div class="works-list">
+                    <!-- Project 01 -->
+                    <div class="work-item">
+                        <div class="work-image-wrap">
+                            <img src="assets/images/projects/alila-goa.webp" alt="Alila Resort Goa">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="work-text">
+                            <span class="work-number">01</span>
+                            <h3 class="work-name">Alila Resort Goa</h3>
+                            <span class="work-category">Luxury Resort Website</span>
+                            <p class="work-desc">A cinematic luxury resort landing page for Alila Goa — featuring full-screen video backgrounds, smooth GSAP scroll animations, and a premium hospitality aesthetic that immerses visitors from the first second.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">HTML5</span>
+                                <span class="work-tag">CSS3</span>
+                                <span class="work-tag">GSAP</span>
+                                <span class="work-tag">ScrollTrigger</span>
+                            </div>
+                            <a href="https://alilagoa.netlify.app/" target="_blank" class="work-cta">View Project <span class="cta-arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 02 -->
+                    <div class="work-item">
+                        <div class="work-image-wrap">
+                            <img src="assets/images/projects/saffron-stories.webp" alt="Saffron Stories">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="work-text">
+                            <span class="work-number">02</span>
+                            <h3 class="work-name">Saffron Stories</h3>
+                            <span class="work-category">Restaurant Website</span>
+                            <p class="work-desc">A warm, elegant restaurant website for a Vadodara-based dining experience — crafted to capture the richness of Indian cuisine through immersive visuals, refined typography, and a seamless browsing journey.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">HTML5</span>
+                                <span class="work-tag">CSS3</span>
+                                <span class="work-tag">JavaScript</span>
+                            </div>
+                            <a href="https://saffron-stories.netlify.app/" target="_blank" class="work-cta">View Project <span class="cta-arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 03 -->
+                    <div class="work-item">
+                        <div class="work-image-wrap">
+                            <img src="assets/images/projects/aura-ai.webp" alt="AURA AI">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="work-text">
+                            <span class="work-number">03</span>
+                            <h3 class="work-name">AURA AI</h3>
+                            <span class="work-category">AI Startup Landing Page</span>
+                            <p class="work-desc">A premium landing page for AURA — an AI companion that thinks, speaks, and responds like a human, even without direct input. The design reflects the intelligence and warmth of the product through fluid animations and a futuristic interface.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">HTML5</span>
+                                <span class="work-tag">CSS3</span>
+                                <span class="work-tag">GSAP</span>
+                                <span class="work-tag">JavaScript</span>
+                            </div>
+                            <a href="https://aura-ai-compani0n.netlify.app/" target="_blank" class="work-cta">View Project <span class="cta-arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 04 -->
+                    <div class="work-item">
+                        <div class="work-image-wrap">
+                            <img src="assets/images/projects/captain-streak.webp" alt="Captain Streak">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="work-text">
+                            <span class="work-number">04</span>
+                            <h3 class="work-name">Captain Streak</h3>
+                            <span class="work-category">Gym & Fitness Website</span>
+                            <p class="work-desc">A dark, high-energy gym website for Captain Streak — a fictional fitness brand from my own stories set in Vadodara. Built to feel bold, motivating, and cinematic with deep contrast and powerful typography.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">HTML5</span>
+                                <span class="work-tag">CSS3</span>
+                                <span class="work-tag">GSAP</span>
+                                <span class="work-tag">JavaScript</span>
+                            </div>
+                            <a href="https://captain-streak.netlify.app/" target="_blank" class="work-cta">View Project <span class="cta-arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 05 -->
+                    <div class="work-item">
+                        <div class="work-image-wrap">
+                            <img src="assets/images/projects/stark-industries.webp" alt="Stark Industries">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="work-text">
+                            <span class="work-number">05</span>
+                            <h3 class="work-name">Stark Industries</h3>
+                            <span class="work-category">Futuristic Tech Company</span>
+                            <p class="work-desc">A futuristic website for Stark Industries — a fictional space exploration and technology company. Inspired by the Iron Man universe, built with dark atmospherics, glowing accents, and immersive scroll-driven storytelling.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">HTML5</span>
+                                <span class="work-tag">CSS3</span>
+                                <span class="work-tag">GSAP</span>
+                                <span class="work-tag">Spline 3D</span>
+                            </div>
+                            <a href="https://stark-1ndustries.netlify.app/" target="_blank" class="work-cta">View Project <span class="cta-arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 06 -->
+                    <div class="work-item">
+                        <div class="work-image-wrap">
+                            <div class="work-badge">ORIGIN PROJECT</div>
+                            <img src="assets/images/projects/stylegrid.webp" alt="StyleGrid">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="work-text">
+                            <span class="work-number">06</span>
+                            <h3 class="work-name">StyleGrid</h3>
+                            <span class="work-category">Fashion E-Commerce Clone</span>
+                            <p class="work-desc">My origin project — a Myntra-inspired fashion e-commerce clone built entirely by hand over 6 days of raw trial, error, and obsession. Not perfect, but the project that proved I could build anything I set my mind to.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">HTML5</span>
+                                <span class="work-tag">CSS3</span>
+                                <span class="work-tag">JavaScript</span>
+                            </div>
+                            <a href="https://stylegrid-siddharth.netlify.app/" target="_blank" class="work-cta">View Project <span class="cta-arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT SECTION -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header-block">
+                    <div class="contact-label-wrapper">
+                        <span class="contact-label-text">GET IN TOUCH</span>
+                        <span class="contact-label-line"></span>
+                    </div>
+                    <h2 class="contact-title">Let's Build Something</h2>
+                    <p class="contact-subtext">Open to freelance projects, collaborations, and creative experiments. Let's make something worth remembering.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left: Contact Form -->
+                    <div class="contact-left">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn" id="submit-btn">
+                                <span class="btn-text">Send Message <span class="btn-arrow">→</span></span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Contact Info -->
+                    <div class="contact-right">
+                        <h3 class="info-heading">Or reach me directly</h3>
+                        
+                        <div class="contact-cards">
+                            <a href="mailto:codewithsiddharth.dev@gmail.com" class="contact-card">
+                                <div class="card-icon">✉️</div>
+                                <div class="card-info">
+                                    <span class="card-label">Email</span>
+                                    <span class="card-value">codewithsiddharth.dev@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.instagram.com/mainsiddharthhoo/" target="_blank" class="contact-card">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="url(#ig-grad)" xmlns="http://www.w3.org/2000/svg">
+                                      <defs>
+                                        <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                          <stop offset="0%" stop-color="#F58529" />
+                                          <stop offset="25%" stop-color="#FEDA77" />
+                                          <stop offset="50%" stop-color="#DD2A7B" />
+                                          <stop offset="75%" stop-color="#8134AF" />
+                                          <stop offset="100%" stop-color="#515BD4" />
+                                        </linearGradient>
+                                      </defs>
+                                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.822a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+                                    </svg>
+                                </div>
+                                <div class="card-info">
+                                    <span class="card-label">Instagram</span>
+                                    <span class="card-value">@mainsiddharthhoo</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/siddharth-rohit-9505a7386/" target="_blank" class="contact-card">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                </div>
+                                <div class="card-info">
+                                    <span class="card-label">LinkedIn</span>
+                                    <span class="card-value">Siddharth Rohit</span>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/mainSiddharthhoon" target="_blank" class="github-strip">
+                                <div class="github-left">
+                                    <span class="github-icon">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                    </span>
+                                    <span class="github-username">mainSiddharthhoon</span>
+                                </div>
+                                <div class="github-right">
+                                    <span>View Repositories →</span>
+                                </div>
+                            </a>
+
+                            <a href="https://cssbattle.dev/player/fakesiddharth" target="_blank" class="github-strip">
+                                <div class="github-left">
+                                    <div class="card-icon">🎯</div>
+                                    <div class="card-info">
+                                        <span class="card-label">CSS Battle</span>
+                                        <span class="card-value">fakesiddharth</span>
+                                    </div>
+                                </div>
+                                <div class="github-right">
+                                    <span>View Profile →</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FOOTER -->
+        <footer id="footer" class="footer">
+            <div class="footer-divider"></div>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p class="copyright">© 2026 Siddharth Rohit</p>
+                </div>
+                <div class="footer-center">
+                    <div class="footer-logo">SR<span class="logo-dot">.</span></div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-tagline">Built with obsession.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
