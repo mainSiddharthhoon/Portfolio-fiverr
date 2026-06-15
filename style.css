@@ -367,6 +367,77 @@ spline-viewer + a {
 }
 
 /* ---- HERO STYLES ---- */
+#hero-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.aurora-layer {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  filter: blur(60px);
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.aurora-1 {
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.6) 0%, transparent 60%);
+  animation-name: aurora-drift-1;
+  animation-duration: 9s;
+  transform-origin: 60% 40%;
+}
+
+.aurora-2 {
+  background: radial-gradient(ellipse at center, rgba(167,139,250,0.4) 0%, transparent 55%);
+  animation-name: aurora-drift-2;
+  animation-duration: 12s;
+  transform-origin: 30% 70%;
+  opacity: 0.4;
+}
+
+.aurora-3 {
+  background: radial-gradient(ellipse at center, rgba(79,70,229,0.5) 0%, transparent 50%);
+  animation-name: aurora-drift-3;
+  animation-duration: 7s;
+  transform-origin: 70% 60%;
+  opacity: 0.35;
+}
+
+@keyframes aurora-drift-1 {
+  0% { transform: translate(-10%, -10%) scale(1) rotate(0deg); opacity: 0.5; }
+  33% { transform: translate(5%, 8%) scale(1.15) rotate(15deg); opacity: 0.65; }
+  66% { transform: translate(-5%, 12%) scale(0.95) rotate(-10deg); opacity: 0.45; }
+  100% { transform: translate(10%, -5%) scale(1.1) rotate(20deg); opacity: 0.6; }
+}
+
+@keyframes aurora-drift-2 {
+  0% { transform: translate(8%, 5%) scale(1.1) rotate(10deg); opacity: 0.4; }
+  33% { transform: translate(-8%, -8%) scale(0.9) rotate(-15deg); opacity: 0.55; }
+  66% { transform: translate(12%, -5%) scale(1.2) rotate(5deg); opacity: 0.35; }
+  100% { transform: translate(-5%, 10%) scale(1) rotate(-20deg); opacity: 0.5; }
+}
+
+@keyframes aurora-drift-3 {
+  0% { transform: translate(5%, -8%) scale(0.95) rotate(-5deg); opacity: 0.35; }
+  33% { transform: translate(-10%, 5%) scale(1.1) rotate(20deg); opacity: 0.5; }
+  66% { transform: translate(8%, 10%) scale(1.05) rotate(-10deg); opacity: 0.4; }
+  100% { transform: translate(-5%, -5%) scale(0.9) rotate(15deg); opacity: 0.45; }
+}
+
 .hero {
     position: relative;
     width: 100%;
