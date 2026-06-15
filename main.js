@@ -800,18 +800,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function initSplineOptimization() {
         const isTouchDevice = ('ontouchstart' in window);
         const cores = navigator.hardwareConcurrency || 4;
-        const ram = navigator.deviceMemory || 4;
+        const memory = navigator.deviceMemory || 0;
         
-        // High end: 6+ cores OR 6GB+ RAM (catches flagship phones even if cores are artificially capped by the browser)
-        const isHighEndMobile = isTouchDevice && (cores >= 6 || ram >= 6);
-        const isBudgetMobile = isTouchDevice && !isHighEndMobile;
+        const isHighEndMobile = isTouchDevice && memory >= 8;
+        const isBudgetMobile = isTouchDevice && memory < 8;
 
         const splineViewer = document.querySelector('spline-viewer');
+        const fallback = document.getElementById('hero-fallback');
         if (splineViewer) {
             if (isHighEndMobile) {
+                splineViewer.style.display = 'block';
                 splineViewer.style.pointerEvents = 'auto';
+                if (fallback) fallback.style.display = 'none';
             } else if (isBudgetMobile) {
-                splineViewer.style.pointerEvents = 'none';
+                splineViewer.style.display = 'none';
+                if (fallback) fallback.style.display = 'block';
             }
         }
     }
